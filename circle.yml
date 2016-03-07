@@ -1,0 +1,24 @@
+
+
+# pre-require set up
+dependencies:
+  pre:
+
+  override:
+    - play update
+
+
+# database
+database:
+   override:
+
+
+
+# Execute tests and report
+test:
+   override:
+     - play test
+
+   post:
+     - mkdir -p $CIRCLE_TEST_REPORTS/junit/
+     - cp target/test-reports/* $CIRCLE_TEST_REPORTS/junit/
